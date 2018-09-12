@@ -1,42 +1,8 @@
-<!DOCTYPE html>
 <?php
-
-	function sanitizeFormPassword($inputText){
-		$inputText = strip_tags($inputText);
-		return $inputText;
-	}
-
-	function sanitizeFormUsername($inputText){
-		$inputText = strip_tags($inputText);
-		$inputText = str_replace(" ", "", $inputText);
-		return $inputText;
-	}
-
-	function sanitizeFormString($inputText){
-		$inputText = strip_tags($inputText);
-		$inputText = str_replace(" ", "", $inputText);
-		$inputText = ucfirst(strtolower($inputText));;
-		return $inputText;
-	}
-
-	if (isset($_POST['loginButton'])) {
-		//Login
-		echo "Login Button Was Pressed";
-	}
-
-	if (isset($_POST['registerButton'])) {
-		//Register
-		$registerUserName = sanitizeFormUsername($_POST['registerUserName']);
-		$registerFirstName = sanitizeFormString($_POST['registerFirstName']);
-		$registerLastName = sanitizeFormString($_POST['registerLastName']);
-		$registerEmail = sanitizeFormString($_POST['registerEmail']);
-		$registerConfirmEmail = sanitizeFormString($_POST['registerConfirmEmail']);
-		$registerPassword = sanitizeFormPassword($_POST['registerPassword']);
-		$registerConfirmPassword = sanitizeFormPassword($_POST['registerConfirmPassword']);
-	}
+	include("inc/handlers/registerHandler.php");
+	include("inc/handlers/loginHandler.php");
 ?>
-
-
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Welcome to Slotify</title>
