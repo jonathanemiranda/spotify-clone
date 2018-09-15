@@ -1,6 +1,10 @@
 <?php
+	include("inc/classes/Account.php");
+	$account = new Account();
+
 	include("inc/handlers/registerHandler.php");
 	include("inc/handlers/loginHandler.php");
+	
 ?>
 <!DOCTYPE html>
 <html>
