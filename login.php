@@ -28,27 +28,47 @@
 
 		<form id="registerForm" action="login.php" method="POST">
 			<h2>Create Your Account</h2>
+
 			<p>
+				<?php
+				echo $account->getError("Usernames must be between 6 and 24 characters");
+				?>
 				<label for="registerUserName">Username</label>
 				<input id="registerUserName" type="text" name="registerUserName" placeholder="Username" required>
 			</p>
 			<p>
+				<?php
+				echo $account->getError("First name must be between 3 and 24 characters");
+				?>
 				<label for="registerFirstName">First Name</label>
 				<input id="registerFirstName" type="text" name="registerFirstName"required>
 			</p>
 			<p>
+				<?php
+				echo $account->getError("Last name must be between 3 and 24 characters");
+				?>
 				<label for="registerLastName">Last Name</label>
 				<input id="registerLastName" type="text" name="registerLastName" required>
 			</p>
 			<p>
+				<?php
+				echo $account->getError("Email addresses do not match");
+				echo $account->getError("Email addresses is not valid");
+				?>
 				<label for="registerEmail">Email</label>
 				<input id="registerEmail" type="email" name="registerEmail" required>
 			</p>
 			<p>
+				
 				<label for="registerConfirmEmail">Confirm Email</label>
 				<input id="registerConfirmEmail" type="email" name="registerConfirmEmail" required>
 			</p>
 			<p>
+				<?php
+				echo $account->getError("Passwords do not match");
+				echo $account->getError("Passwords can only contain letters and numbers");
+				echo $account->getError("Your password must be between 6 and 24 characters");
+				?>
 				<label for="registerPassword">Password</label>
 				<input id="registerPassword" type="password" name="registerPassword" required>
 			</p>
