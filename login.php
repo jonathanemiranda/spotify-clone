@@ -5,6 +5,12 @@
 
 	include("inc/handlers/registerHandler.php");
 	include("inc/handlers/loginHandler.php");
+
+	function getInputValue($inputName){
+		if ($_POST[$inputName]) {
+			echo $_POST[$inputName];
+		}
+	}
 	
 ?>
 <!DOCTYPE html>
@@ -35,21 +41,21 @@
 				echo $account->getError(Constants::$usernameLength);
 				?>
 				<label for="registerUserName">Username</label>
-				<input id="registerUserName" type="text" name="registerUserName" placeholder="Username" required>
+				<input id="registerUserName" type="text" name="registerUserName" placeholder="Username" value="<?php getInputValue("registerUserName");?>"required>
 			</p>
 			<p>
 				<?php
 				echo $account->getError(Constants::$firstNameLength);
 				?>
 				<label for="registerFirstName">First Name</label>
-				<input id="registerFirstName" type="text" name="registerFirstName"required>
+				<input id="registerFirstName" type="text" name="registerFirstName" value="<?php getInputValue("registerFirstName");?>" required>
 			</p>
 			<p>
 				<?php
 				echo $account->getError(Constants::$lastNameLength);
 				?>
 				<label for="registerLastName">Last Name</label>
-				<input id="registerLastName" type="text" name="registerLastName" required>
+				<input id="registerLastName" type="text" name="registerLastName" value="<?php getInputValue("registerLastName");?>" required>
 			</p>
 			<p>
 				<?php
@@ -57,12 +63,12 @@
 				echo $account->getError(Constants::$emailInvalid);
 				?>
 				<label for="registerEmail">Email</label>
-				<input id="registerEmail" type="email" name="registerEmail" required>
+				<input id="registerEmail" type="email" name="registerEmail" value="<?php getInputValue("registerEmail");?>" required>
 			</p>
 			<p>
 				
 				<label for="registerConfirmEmail">Confirm Email</label>
-				<input id="registerConfirmEmail" type="email" name="registerConfirmEmail" required>
+				<input id="registerConfirmEmail" type="email" name="registerConfirmEmail" value="<?php getInputValue("registerConfirmEmail");?>" required>
 			</p>
 			<p>
 				<?php
