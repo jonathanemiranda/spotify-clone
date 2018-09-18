@@ -40,6 +40,7 @@
 			<p>
 				<?php
 				echo $account->getError(Constants::$usernameLength);
+				echo $account->getError(Constants::$usernameTaken);
 				?>
 				<label for="registerUserName">Username</label>
 				<input id="registerUserName" type="text" name="registerUserName" placeholder="Username" value="<?php getInputValue("registerUserName");?>"required>
@@ -62,6 +63,7 @@
 				<?php
 				echo $account->getError(Constants::$emailsDoNotMatch);
 				echo $account->getError(Constants::$emailInvalid);
+				echo $account->getError(Constants::$emailTaken);
 				?>
 				<label for="registerEmail">Email</label>
 				<input id="registerEmail" type="email" name="registerEmail" value="<?php getInputValue("registerEmail");?>" required>
