@@ -4,11 +4,13 @@
 	 */
 	class Account
 	{
+		private $con;
 		private $errorArray;
 
-		function __construct()
+		function __construct($con)
 		{
 			$this->errorArray = array();
+			$this->con = $con;
 		}
 
 		public function register($un, $fn, $ln, $em, $em2, $pw, $pw2){
@@ -19,7 +21,7 @@
 			$this->validatePasswords($pw, $pw2);
 
 			if (empty($this->errorArray)) {
-				return true;
+				return $this->insertUserDetails($un, $fn, $ln, $em, $pw);
 			}
 			else{
 				return false;
@@ -33,12 +35,21 @@
 			return "<span class = 'errorMessage'>$error</span>";
 		}
 
+		private function insertUserDetails($un, $fn, $ln, $em, $pw){
+			$encryptedPW = md5($pw);
+			$profilePic = "assets/img/profilePics/blank-profile-picture-973460_640.png";
+			$date = date("Y-m-d");
+			$result = mysqli_query($this->con, "INSERT INTO users (username, firstName, lastName, email, password, date_created, profilePic) VALUES('$un', '$fn', '$ln', '$em', '$encryptedPW', '$date', '$profilePic')");
+			return $result;
+
+		}
+
 		private function validateUsername($username){
 			if(strlen($username) > 25 || strlen($username) < 5){
 				array_push($this->errorArray, Constants::$usernameLength);
 				return;
 			}
-			//TODO: Chekc if username already exists
+			//TODO: Check if username already exists
 		}
 
 		private function validateFirstName($firstName){
