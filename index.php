@@ -1,3 +1,18 @@
+<?php
+	include("inc/config.php");
+
+	//MANUAL LOGOUT
+	// session_destroy();
+
+	if (isset($_SESSION['userLoggedIn'])) {
+		$userLoggedIn = $_SESSION['userLoggedIn'];
+	}
+	else{
+		header("Location: login.php");
+	}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

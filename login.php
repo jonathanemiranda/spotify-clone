@@ -24,6 +24,9 @@
 		<form id="loginForm" action="login.php" method="POST">
 			<h2>Log In to Your Account</h2>
 			<p>
+				<?php
+				echo $account->getError(Constants::$loginFailed);
+				?>
 				<label for="loginUsername">Username</label>
 				<input id="loginUsername" type="text" name="loginUsername" placeholder="Username" required>
 			</p>

@@ -13,6 +13,19 @@
 			$this->con = $con;
 		}
 
+		public function login($username, $password){
+			$password = md5($password);
+			$query = mysqli_query($this->con, "SELECT * FROM users WHERE username = '$username' AND password = '$password'");
+			if (mysqli_num_rows($query) == 1) {
+				return true; 
+			}
+			else{
+				array_push($this->errorArray, Constants::$loginFailed);
+				return false;
+			}
+		}
+
+
 		public function register($un, $fn, $ln, $em, $em2, $pw, $pw2){
 			$this->validateUsername($un);
 			$this->validateFirstName($fn);
