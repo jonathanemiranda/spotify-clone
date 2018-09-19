@@ -31,13 +31,16 @@
 						echo $account->getError(Constants::$loginFailed);
 						?>
 						<label for="loginUsername">Username</label>
-						<input id="loginUsername" type="text" name="loginUsername" placeholder="Username" required>
+						<input id="loginUsername" type="text" name="loginUsername" required>
 					</p>
 					<p>
 						<label for="loginPassword">Password</label>
 						<input id="loginPassword" type="password" name="loginPassword" required>
 					</p>
 					<button type="submit" name="loginButton">Log In</button>
+					<div class="hasAccountText">
+						<span id="hideLogin">Don't have an account yet? Sign up here</span>
+					</div>
 				</form>
 
 				<form id="registerForm" action="login.php" method="POST">
@@ -49,7 +52,7 @@
 						echo $account->getError(Constants::$usernameTaken);
 						?>
 						<label for="registerUserName">Username</label>
-						<input id="registerUserName" type="text" name="registerUserName" placeholder="Username" value="<?php getInputValue("registerUserName");?>"required>
+						<input id="registerUserName" type="text" name="registerUserName" value="<?php getInputValue("registerUserName");?>"required>
 					</p>
 					<p>
 						<?php
@@ -93,6 +96,9 @@
 						<input id="registerConfirmPassword" type="password" name="registerConfirmPassword" required>
 					</p>
 					<button type="submit" name="registerButton">Sign Up</button>
+					<div class="hasAccountText">
+						<span id="hideSignUp">Already have an account? Sign in here</span>
+					</div>
 				</form>
 			</div>
 		</div>
