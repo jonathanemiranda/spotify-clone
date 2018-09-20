@@ -70,13 +70,14 @@ html, body{
 	height: 30px;
 	line-height: 30px;
 	width: 100%;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 #inputContainer label{
 	color: rgba(255, 255, 255, .7);
 	font-size: 13px;
 	margin-top: 15px;
+	display: block;
 }
 
 #inputContainer button{
@@ -113,7 +114,7 @@ html, body{
 }
 
 #loginText{
-	padding: 45px; 
+	padding: 45px 20px 45px 45px; 
 	display: table-cell;
 }
 
@@ -136,6 +137,12 @@ html, body{
 	list-style-type: none;
 	padding: 5px 30px;
 	background: url(../img/icons/checkmark.png) no-repeat 0 0 ;
+}
+
+#inputContainer .errorMessage{
+	color: #07d159;
+	font-size: 12px;
+	display: block;
 }
 
 
