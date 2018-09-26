@@ -222,6 +222,45 @@ body{
 	padding: 0 20px;
 }
 
+.pageHeadingBig{	
+	padding: 20px;
+	text-align: center;
+	font-weight: 300;
+}
+
+.gridViewItem{
+	display: inline-block;
+	margin: 0 20px 20px 0;
+	width: 29%;
+	max-width: 200px;
+	min-width: 150px;
+}
+
+.gridViewItem img{
+	width: 100%;
+}
+
+.gridViewInfo{
+	font-weight: 300;
+	text-align: center;
+	padding: 5px 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.gridViewItem a{
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
 
 
 
