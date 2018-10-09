@@ -8,15 +8,21 @@ else{
 
 
 $album = new Album($con, $albumID);
-
 $artist = $album->getArtistName(); 
-
-echo $album->getTitle() . "</br>";
-echo $artist->getName();
 
 ?>
 
+<div class="entityInfo"> 
+	<div class="leftSection">
+		<img src="<?php echo $album->getArtwork();?>">
+	</div>
+	<div class="rightSection">
+		<h2><?php echo $album->getTitle();?></h2>
+		<p>by <?php echo $artist->getName();?></p>
+		<p><?php echo $album->getSongCount();?> songs</p>
+	</div>
 
+</div>
 
 
 

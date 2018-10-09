@@ -42,6 +42,11 @@
 			return $this->artworkPath;
 		}
 
+		public function getSongCount(){
+			$query = mysqli_query($this->con, "SELECT id FROM songs WHERE album_id = $this->id");
+			return mysqli_num_rows($query);
+		}
+
 	}
 
 
